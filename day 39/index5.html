@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(){
+                this.table=new Array(8);
+            }
+            show(x){ // hash
+                var a=0;
+                for(var i=0; i<x.length; i++){
+                    a+=x.charCodeAt(i);
+                }
+                return a%this.table.length;
+            }
+            show1(x,y){ // set
+                var index=this.show(x);
+                this.table[index]=[x,y];
+            }
+            show2(x){ // get
+                var index=this.show(x);
+                var keyvalue=this.table[index];
+                console.log(keyvalue[1]);
+            }
+            search(x){
+                var hashcode=this.show(x);
+                if(hashcode){
+                    console.log(`${x} is present at ${hashcode}`);
+                }
+                else{
+                    console.log("value not found");
+                }
+            }
+        }
+        var obj=new Car();
+        obj.show1("apples",220);
+        obj.show1("oranges",80);
+        obj.show1("kiwi",300);
+        obj.search("kiwi"); // (sum of ascii code of kiwi)%array length
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

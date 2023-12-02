@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(x){
+                this.value=x;
+                this.arr=[];
+            }
+        }
+        var a=new Car(1);
+        var b=new Car(3);
+        var c=new Car(10);
+        var d=new Car(15);
+        var e=new Car(20);
+        a.arr.push(b);
+        b.arr.push(c,d,e);
+        console.log(a);
+        console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Search
+        var arr=[1,3,6,7,8,10,5];
+        class Stack{
+            constructor(arr){
+                this.arr=arr;
+            }
+            search(element){
+                var arr1=[...this.arr];
+                var top=this.arr.length-1;
+                for(let i=0; i<arr1.length; i++){
+                    var x=arr1[top];
+                    top=top-1;
+                    if(x==element){
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        var obj=new Stack(arr);
+        console.log(obj.search(3));
+        console.log(obj.search(15));
+        console.log(obj.search(8));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

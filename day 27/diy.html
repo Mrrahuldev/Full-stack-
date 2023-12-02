@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 27</title>
+    <style>
+        .mainbox{
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: auto;
+            gap: 1rem;
+        }
+        .box{
+            min-width: 200px;
+            flex: 1;
+            border: 2px solid blue;
+            padding: 0.5rem;
+        }
+    </style>
+    <script>
+        (function (){
+    alert('Hello Everone!');
+})();
+
+const fetchData = () => {
+    return fetch('https://jsonplaceholder.typicode.com/todos')
+    .then((response) => response.json())
+    .then((data) => data.slice(0,10));
+};
+
+const getData = async () => {
+    const data = await fetchData();
+
+    if(data !== undefined) {
+        const mainbox = document.querySelector(".mainbox");
+
+        const timer = setInterval(() => {//will run at regular intervals
+            data.map((x) => {
+                const div= document.createElement('div');
+                div.className = "box";
+
+                const h3= document.createElement("h3");
+                h3.innerHTML = `${x.id}. ${x.title}`;
+
+                div.appendChild(h3);
+                mainbox.appendChild(div);
+            });
+            setTimeout(() => {
+                clearInterval(timer);
+            }, 5000);
+        }, 1000);
+    }
+};
+
+getData();
+    </script>
+</head>
+<body>
+    <div class="mainbox"></div>
+</body>
+</html>

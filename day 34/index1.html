@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[6,2,5,3,9];
+        function show(){
+            for(i=0; i<arr.length; i++){
+                for(j=0; j<arr.length; j++){
+                    if(arr[j]>arr[j+1]){
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+        }
+        console.log("Before bubble sort: "+arr);
+        show();
+        console.log("After bubble sort: "+arr);
+        console.log("Descending through bubble sort: "+arr.reverse());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

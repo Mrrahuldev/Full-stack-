@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(x, y) {
+            var a = x + y;
+            console.log("Addition is " + a);
+        }
+        /*      setTimeout(show,3000,10,20); */
+
+        function show1(x, y) {
+            var a = x + y;
+            console.log("Addition is " + a);
+        }
+        /*      var x=setInterval(show1,500,50,60);
+             clearInterval(x); */
+
+        var arr=[1,2,3,4,5];
+
+        function getData() {
+                var timer = setInterval(() => {
+                    arr.map((x) => {
+                        console.log(x);
+                    })
+                setTimeout(() => {
+                    clearTimeout(timer)
+                }, 5000)
+            }, 1000);
+            
+        }
+        getData();
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

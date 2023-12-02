@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj={
+            name: "Abc",
+            show: function(x,y){
+                console.log(this.name,x,y);
+            }
+        }
+        var obj1={
+            name: "Xyz",
+        }
+        obj.show();
+        obj.show("hello",1);
+        obj.show.call(obj1,"hello from call",10);
+        obj.show.apply(obj1,["hello from apply",100]);
+        var a=obj.show.bind(obj1,"hello from bind",1000);
+        a();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

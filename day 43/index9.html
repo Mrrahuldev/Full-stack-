@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class BinaryHeap{
+            constructor(){
+                this.arr=[];
+            }
+            push(element){
+                this.arr.push(element);
+                var index=this.arr.length-1;
+                var current=this.arr[index];
+                while(index>0){
+                    var parentIndex=Math.floor((index-1)/2);
+                    var parent=this.arr[parentIndex];
+                    if(parent<=current){
+                        this.arr[parentIndex]=current;
+                        this.arr[index]=parent;
+                        index=parentIndex;
+                    }
+                    else break;
+                }
+            }
+            popMax(){ // for max heap
+                var max=this.arr[0], end=this.arr.pop();
+                this.arr[0]=end; // element at 0 index has to be popped
+                var length=this.arr.length, current=this.arr[0];
+                var index=0;
+                while(true){
+                    var leftChildIndex=2*index+1;
+                    var rightChildIndex=2*index+2;
+                    var leftChild,rightChild;
+                    var swap=null;
+                    if(leftChildIndex<length){
+                        leftChild=this.arr[leftChildIndex];
+                        if(leftChild>current){ // if leftChild is larger than current/parent element
+                            swap=leftChildIndex;
+                        }
+                    }
+                    if(rightChildIndex<length){
+                        rightChild=this.arr[rightChildIndex];
+                        if((swap===null&&rightChild>current) || (swap!==null&&rightChild>leftChild)){
+                            swap=rightChildIndex;
+                        }
+                    }
+                    if(swap===null){ // if swap is null, it means that parent element is largest
+                        break;
+                    }
+                    this.arr[index]=this.arr[swap]; // left/right child element is inserted at parent index
+                    this.arr[swap]=current; // parent element is inserted at left/right child element's index
+                    index=swap;
+                }
+                return max;
+            }
+        }
+        var obj=new BinaryHeap();
+        obj.push(30);
+        obj.push(20);
+        obj.push(40);
+        obj.push(60);
+        obj.push(50);
+        obj.popMax();
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

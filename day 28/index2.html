@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj={
+            name: "Abc",
+            show: function(){
+                console.log(this.name);
+            }
+        }
+        var obj1={
+            name: "Xyz",
+        }
+        obj.show();
+        obj.show.call(obj1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

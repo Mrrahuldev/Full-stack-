@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Inserting node in Directed Graph
+        class Graph{
+            constructor(){
+                this.adjacencyList=new Map();
+            }
+            addNode(node){
+                this.adjacencyList.set(node,[]); // initialising with empty array to hold value
+            }
+        }
+        const G1=new Graph();
+        G1.addNode("A");
+        G1.addNode("B");
+        G1.addNode("C");
+        G1.addNode("D");
+        console.log(G1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

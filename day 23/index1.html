@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            document.getElementById("heading").style.color="blue";
+            document.getElementsByTagName("h2")[0].style.fontSize="35px";
+            document.getElementsByTagName("input")[0].setAttribute("type","checkbox");
+            document.getElementsByClassName("button1")[0].style.backgroundColor="red";
+            document.getElementsByClassName("button1")[0].style.color="white";
+            document.querySelector("#div1").style.color="purple";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="heading">Heading 3</h1>
+    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quasi incidunt fugit illo odit. Ex, culpa. Sunt debitis officia quasi eveniet maiores maxime, aperiam porro, cupiditate, aspernatur accusantium earum provident!</h2>
+    <input type="text"/>
+    <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, praesentium.</div>
+    <button class="button1" onclick="show()">Click me</button>
+</body>
+</html>

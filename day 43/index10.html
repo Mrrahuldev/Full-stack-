@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Node{
+            constructor(key,value){
+                this.key=key;
+                this.value=value;
+                this.degree=0;
+                this.parent=undefined;
+                this.child=undefined;
+                this.sibling=undefined;
+            }
+        }
+        function linkTrees(minNodeTree,other){
+            other.parent=minNodeTree;
+            other.sibling=minNodeTree.child;
+            minNodeTree.child=other;
+            minNodeTree.degree++;
+        }
+        function compare(a,b){
+            if(a==b){
+                return 0;
+            }
+            return a<b ? -1 : 1;
+        }
+        class BinomialHeap{
+            constructor(compare){
+                if(compare){
+                    this.compare=compare;
+                }
+                this.head=undefined;
+                this.size=0;
+            }
+            union(heap){
+                this.size+=heap.size;
+                var newHead=this.mergeHeaps(this,heap);
+                this.heap=undefined;
+                heap.head=undefined;
+                if(!newHead){
+                    return undefined;
+                }
+                var prev;
+                var curr=newHead;
+                var next=newHead.sibling;
+                while(next){
+                    if(curr.degree!==next.degree || (next.sibling&&next.sibling.degree===curr.degree)){
+                        prev=curr;
+                        curr=next;
+                    }
+                    else if(compare(curr,next)<0){
+                        curr.sibling=next.sibling;
+                        linkTrees(curr,next);
+                    }
+                    else{
+                        if(typeof prev==="undefined"){
+                            newHead=next;
+                        }
+                        else{
+                            prev.sibling=next;
+                        }
+                        linkTrees(next,curr);
+                        curr=next;
+                    }
+                    next=curr.sibling;
+                }
+                this.head=newHead;
+            }
+            mergeHeaps(a,b){
+                if(typeof a.head==="undefined"){
+                    return b.head;
+                }
+                if(typeof b.head==="undefined"){
+                    return a.head;
+                }
+                var head;
+                var aNext=a.head;
+                var bNext=b.head;
+                if(a.head.degree<=b.head.degree){
+                    head=a.head;
+                    aNext=aNext.sibling;
+                }
+                else{
+                    head=b.head;
+                    bNext=bNext.sibling;
+                }
+                var tail=head;
+                while(aNext&&bNext){
+                    if(aNext.degree<=bNext.degree){
+                        tail.sibling=aNext;
+                        aNext=aNext.sibling;
+                    }
+                    else{
+                        tail.sibling=bNext;
+                        bNext=bNext.sibling;
+                    }
+                    tail=tail.sibling;
+                }
+                tail.sibling=aNext ? aNext : bNext;
+                return head;
+            }
+            insert(key,value){
+                var tempHeap=new BinomialHeap();
+                var newNode=new Node(key,value);
+                tempHeap.head=newNode;
+                tempHeap.size++;
+                this.union(tempHeap);
+                return newNode;
+            }
+        }
+        var h1=new BinomialHeap();
+        h1.insert(10);
+        h1.insert(30);
+        h1.insert(50);
+        h1.insert(20);
+        h1.insert(15);
+        h1.insert(17);
+        console.log(h1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

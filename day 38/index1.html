@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Peek
+        var arr=[6,2,5,3,9];
+        var arr1=[];
+        class Car{
+            constructor(x){
+                this.stack=x;
+            }
+            show(){
+                if(this.stack.length===0){
+                    return "Stack Underflow";
+                }
+                const a=this.stack.length-1;
+                return this.stack[a];
+            }
+        }
+        var obj=new Car(arr);
+        var obj1=new Car(arr1);
+        console.log(obj.show());
+        console.log(obj1.show());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

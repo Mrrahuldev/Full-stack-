@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            var username=document.getElementById("username");
+            if(username.value==""){
+                document.getElementById("userspan").innerHTML="Please enter your name";
+                return false;
+            }
+
+            var usermobile=document.getElementById("usermobile");
+            if(usermobile.value.length!=10){
+                document.getElementById("mobilespan").innerHTML="Enter 10 digit number";
+                return false;
+            }
+
+            var userdate=document.getElementById("userdate");
+            if(userdate.value==""){
+                document.getElementById("datespan").innerHTML="Select your age";
+                return false;
+            }
+
+            var userdate1=document.getElementById("userdate");
+            var dob=new Date(userdate1.value);
+            var td=Date.now();
+            var age=(td-dob)/(1000*3600*24*365.25);
+            if(age<18 || age>28){
+                document.getElementById("datespan").innerHTML="Age 18 to 28 allowed";
+                return false;
+            }
+
+            var useremail=document.getElementById("useremail");
+            if(useremail.value==""){
+                document.getElementById("emailspan").innerHTML="Please enter your email";
+                return false;
+            }
+
+            var userpassword=document.getElementById("userpassword");
+            if(userpassword.value==""){
+                document.getElementById("passwordspan").innerHTML="Please enter your password";
+                return false;
+            }
+
+            var usercpassword=document.getElementById("usercpassword");
+            if(usercpassword.value!=userpassword.value){
+                document.getElementById("cpasswordspan").innerHTML="Password didn't match";
+                return false;
+            }
+        }
+
+        function show1(){
+            var userpassword=document.getElementById("userpassword");
+            if(userpassword.type=="password"){
+                userpassword.type="text";
+            }
+            else{
+                userpassword.type="password";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return show()">
+        Name: <input type="text" id="username"/>
+        <span id="userspan" style="color: red;"></span><br/><br/>
+
+        Mobile: <input type="number" id="usermobile"/>
+        <span id="mobilespan" style="color: red;"></span><br/><br/>
+
+        DOB: <input type="date" id="userdate"/>
+        <span id="datespan" style="color: red;"></span><br/><br/>
+
+        Email: <input type="email" id="useremail"/>
+        <span id="emailspan" style="color: red;"></span><br/><br/>
+
+        Password: <input type="password" id="userpassword"/>
+        <span id="passwordspan" style="color: red;"></span><br/><br/>
+
+        Show password: <input type="checkbox" onclick="show1()"/><br/><br/>
+
+        Confirm Password: <input type="password" id="usercpassword"/>
+        <span id="cpasswordspan" style="color: red;"></span><br/><br/>
+
+        <input type="submit"/>
+    </form>
+</body>
+</html>

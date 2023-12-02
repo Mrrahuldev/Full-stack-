@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 900px;
+            height: 700px;
+            margin: 50px;
+            border: 1px solid red;
+        }
+        #div2{
+            width: 700px;
+            height: 500px;
+            margin: 50px;
+            border: 1px solid red;
+        }
+        #div3{
+            width: 500px;
+            height: 300px;
+            margin: 50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("div1").addEventListener("click",function(){alert("div1")},false);
+        document.getElementById("div2").addEventListener("click",function(){alert("div2")},false);
+        document.getElementById("div3").addEventListener("click",function(){alert("div3")},false);
+    </script>
+</body>
+</html>

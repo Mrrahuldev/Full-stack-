@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[];
+        class Car{
+            constructor(arr){
+                this.arr=arr;
+                this.top=this.arr.length-1;
+            }
+            show(){
+                if(this.top==-1){
+                    return console.log("Stack Underflow");
+                }
+                return console.log("Good to perform pop or peek");
+            }
+        }
+        var obj=new Car(arr);
+        obj.show();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Traverse Operation in Double Linked List
+        class Node{
+            constructor(data){
+                this.prev=null;
+                this.data=data;
+                this.next=null;
+            }
+        }
+        class DoubleLinkedList{
+            constructor(){
+                this.head=null;
+                this.size=null;
+            }
+            insert(data){
+                var node=new Node(data);
+                if(this.head==null){
+                    this.head=node;
+                }
+                else{
+                    var current=this.head;
+                    while(current.next!==null){
+                        current=current.next;
+                    }
+                    current.next=node;
+                    node.prev=current;
+                }
+                this.size++;
+            }
+            traverse(){
+                if(this.head==null){
+                    console.log("List is empty");
+                }
+                else{
+                    var current=this.head; // we will use current pointer
+                    while(current.next!=null){ // it will iterate through every node in the list until current's next becomes null
+                        console.log(current.data); // all inserted values except last value are getting printed in console
+                        current=current.next; // current will point to current's next and it will iterate
+                    }
+                    console.log(current.data); // last value is getting printed in console
+                }
+            }
+        }
+        const fruits=new DoubleLinkedList();
+        fruits.insert("Grapes");
+        fruits.insert("orange");
+        fruits.insert("kiwi");
+        fruits.insert("pear");
+        fruits.traverse();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Sequential Search
+        var arr=[6,2,5,3,9];
+        function show(x){
+            for(i=0; i<arr.length; i++){
+                if(arr[i]==x){
+                    return i;
+                }
+            }
+        }
+        var a=show(6);
+        console.log("Original Array is "+arr);
+        show();
+        if(a>=0){
+            console.log("Element found at index "+a);
+        }
+        else{
+            console.log("Element not found");
+        }
+    </script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj={
+            name: "Abc",
+        }
+        var obj1={
+            roll: 1,
+            "roll no": 2,
+        }
+        obj.__proto__=obj1;
+        console.log(obj.name);
+        console.log(obj.roll);
+        console.log(obj["roll no"]);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

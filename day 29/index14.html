@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Single Inheritance
+        class Parent{
+            show(){
+                console.log("this is parent");
+            }
+        }
+        class Child extends Parent{
+            show1(){
+                console.log("this is child");
+            }
+        }
+        var obj=new Parent();
+        obj.show();
+
+        var obj1=new Child();
+        obj1.show();
+        obj1.show1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

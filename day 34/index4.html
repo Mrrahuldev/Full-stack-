@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //merge sort
+        var arr=[6,2,5,3,9];
+        n=arr.length;
+        function merge(arr,l,m,r){
+            var n1=m-l+1;
+            var n2=r-m;
+            var L=new Array(n1); // creating new array for breaking into further sub-array
+            var R=new Array(n2); // creating new array for breaking into further sub-array
+            for(i=0; i<n1; i++){
+                L[i]=arr[l+i]; // copying from original array into newly created left sub-array
+            }
+            for(j=0; j<n2; j++){
+                R[j]=arr[m+1+j]; // copying from original array into newly created right sub-array
+            }
+            var j=0;
+            var k=l;
+            for(i=0; i<n1 && j<n2;){
+                if(L[i]<=R[j]){ // comparing left sub-array with right sub-array
+                    arr[k]=L[i]; // putting left sub-array in array
+                    i++
+                }
+                else{
+                    arr[k]=R[j]; // putting right sub-array in array
+                    j++;
+                }
+                k++;
+            }
+            while(i<n1){ // for comparing the left-over elements if left any
+                arr[k]=L[i]; // again putting left sub-array in array
+                i++;
+                k++;
+            }
+            while(j<n2){
+                arr[k]=R[j]; // again putting right sub-array in array
+                j++;
+                k++;
+            }
+        }
+        function mergeSort(arr,l,r){
+            if(l>=r){
+                return;
+            }
+            var m=l+parseInt((r-l)/2);
+            mergeSort(arr,l,m);
+            mergeSort(arr,m+1,r);
+            merge(arr,l,m,r);
+        }
+        console.log("Before sorting: "+arr);
+        mergeSort(arr,0,n-1);
+        console.log("After sorting: "+arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Deletion Operation in Single Linked List
+        class Node{
+            constructor(data){
+                this.data=data;
+                this.next=null;
+            }
+        }
+        class LinkedList{
+            constructor(){
+                this.head=null;
+                this.size=0;
+            }
+            insert(data){
+                var node=new Node(data);
+                var current;
+                if(this.head==null){
+                    this.head=node;
+                }
+                else{
+                    current=this.head;
+                    while(current.next!==null){
+                        current=current.next;
+                    }
+                    current.next=node;
+                }
+                this.size++;
+            }
+            traverse(){
+                var current=this.head;
+                console.log(this.head.data);
+                while(current.next!==null){
+                    current=current.next;
+                    console.log(current.data);
+                }
+            }
+            delete(){
+                if(this.head==null){
+                    console.log("Linked List is empty");
+                }
+                var current=this.head;  // we will use current pointer
+                while(current.next.next!=null){ // it will iterate through every node in the list until current's next's next becomes null
+                    current=current.next; // current will point to current's next and it will iterate
+                } // once current's next becomes null, it will come out of the loop
+                current.next=null;
+                this.size--;
+            }
+        }
+        var List1=new LinkedList();
+        List1.insert(54);
+        List1.insert(76);
+        List1.insert("apple");
+        List1.insert("kiwi");
+        console.log("elements before deleting:");
+        List1.traverse();
+        List1.delete();
+        console.log("elements after deleting:");
+        List1.traverse();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

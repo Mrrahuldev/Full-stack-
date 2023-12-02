@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //itersection operation on set
+        class Set{
+            constructor(){
+                this.items={};
+            }
+            has(element){
+                return this.items.hasOwnProperty(element.toString());
+            }
+            add(element){
+                this.items[element]=element;
+            }
+            traverse(){
+                console.log(`Elements are ${Object.values(this.items)}`);
+            }
+            intersection(otherset){ // otherset is receiving parameters from set s2
+                if(!(otherset instanceof Set)){
+                    throw new Error("must be instance of set");
+                }
+                var intersectionSet=new Set(); // creating new set
+                Object.keys(this.items).forEach((element) => { // receiving values from set s1
+                    if(otherset.has(element)){ // if set s1 and set s2 have common values
+                        intersectionSet.add(element); // inserting common values in newly created set
+                    }
+                });
+                return intersectionSet;
+            }
+        }
+        var s1=new Set();
+        var s2=new Set();
+        s1.add(10);
+        s1.add(20);
+        s1.add(50);
+        s2.add(80);
+        s2.add(20);
+        s2.add(10);
+        var s3=s1.intersection(s2);
+        s3.traverse();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

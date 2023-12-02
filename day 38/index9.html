@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Traverse
+        class Car{
+            constructor(){
+                this.item={};
+                this.a=0;
+            }
+            show(x){
+                this.item[this.a]=x;
+                this.a++;
+            }
+            show1(){
+                for(var i=0; i<this.a; i++){
+                    console.log("value at index "+i+" is "+this.item[i]);
+                }
+            }
+        }
+        var obj=new Car();
+        obj.show(18);
+        obj.show(19);
+        obj.show(20);
+        console.log(obj.item);
+        obj.show1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

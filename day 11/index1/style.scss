@@ -1,0 +1,22 @@
+$color1: red;
+$color2: blue;
+
+.div1{
+    background-color: $color1;
+    font-size: 10px+20px;
+}
+
+.div2{
+    background-color: $color1;
+}
+
+.div3{
+    background-color: $color2;
+}
+
+.div4{
+    background-color: $color1;
+    .sub-div4{
+        color: white;
+    }
+}

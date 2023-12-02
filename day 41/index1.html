@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Insertion Operation in Double Linked List
+        class Node{
+            constructor(data){
+                this.prev=null;
+                this.data=data;
+                this.next=null;
+            }
+        }
+        class DoubleLinkedList{
+            constructor(){
+                this.head=null;
+                this.size=null;
+            }
+            insert(data){
+                var node=new Node(data);
+                if(this.head==null){ // if head is null
+                    this.head=node; // node will be stored in head or head pointer will point to node
+                }
+                else{
+                    var current=this.head; // we will use current pointer
+                    while(current.next!==null){ // it will iterate through every node in the list until current's next becomes null
+                        current=current.next; // current will point to current's next and it will iterate
+                    } // once current's next becomes null, it will come out of the loop
+                    current.next=node; // current's next will start point to new node or new node will be inserted
+                    node.prev=current; // node's previous will store the address of current
+                }
+                this.size++;
+            }
+        }
+        const fruits=new DoubleLinkedList();
+        fruits.insert("Grapes");
+        fruits.insert("orange");
+        fruits.insert("kiwi");
+        fruits.insert("pear");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

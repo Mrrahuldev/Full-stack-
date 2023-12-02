@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[6,2,5,3,9];
+        function show(){
+            for(i=0; i<arr.length; i++){
+                for(j=i+1; j<arr.length; j++){
+                    if(arr[i]>arr[j]){
+                        var temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+        }
+        console.log("Before selection sort: "+arr);
+        show();
+        console.log("After selection sort: "+arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

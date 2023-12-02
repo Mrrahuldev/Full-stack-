@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class BinaryHeap{
+            constructor(){
+                this.arr=[];
+            }
+            push(element){ // for max heap
+                this.arr.push(element);
+                var index=this.arr.length-1;
+                var current=this.arr[index];
+                while(index>0){
+                    var parentIndex=Math.floor((index-1)/2);
+                    var parent=this.arr[parentIndex];
+                    if(parent<=current){ // in max heap, parent element should be larger than any child element
+                                         // if parent element is smaller than current element 
+                        this.arr[parentIndex]=current; // current element is inserted at parent index
+                        this.arr[index]=parent; // parent element is inserted at current element's index
+                        index=parentIndex;
+                    }
+                    else break;
+                }
+            }
+        }
+        var obj=new BinaryHeap();
+        obj.push(30);
+        obj.push(20);
+        obj.push(40);
+        obj.push(60);
+        obj.push(50);
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

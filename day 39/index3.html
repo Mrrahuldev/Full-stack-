@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(){
+                this.table=new Array(8);
+            }
+            show(x){ // hash
+                var a=0;
+                for(var i=0; i<x.length; i++){
+                    a+=x.charCodeAt(i);
+                }
+                return a%this.table.length;
+            }
+            show1(x,y){ // set
+                const index=this.show(x);
+                this.table[index]=[x,y];
+            }
+        }
+        var obj=new Car();
+        obj.show1("apples",220); // key, value
+        console.log(obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

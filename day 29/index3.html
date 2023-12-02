@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 100px;
+            border: 1px solid red;
+            text-align: center;
+        }
+        #div2{
+            width: 100px;
+            height: 20px;
+            margin-top: 10px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        function show(){
+            document.getElementById("div1").innerHTML="hello";
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2" onclick="show()"></div>
+</body>
+</html>

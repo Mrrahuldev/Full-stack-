@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //has operation on set
+        class Set{
+            constructor(){
+                this.items={};
+            }
+            has(element){
+                return this.items.hasOwnProperty(element);
+            }
+            add(element){
+                this.items[element]=element;
+            }
+        }
+        var obj=new Set();
+        obj.add(10);
+        obj.add(20);
+        console.log(obj.has(10));
+        console.log(obj.has(60));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

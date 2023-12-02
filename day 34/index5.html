@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[6,2,5,3,9];
+        n=arr.length;
+        function partition(arr,left,right){
+            var pivot=arr[Math.floor((left+right)/2)];
+            var i=left;
+            var j=right;
+            while(i<=j){
+                while(arr[i]<pivot){
+                    i++;
+                }
+                while(arr[j]>pivot){
+                    j--;
+                }
+                if(i<=j){
+                    var temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                    i++;
+                    j--;
+                }
+            }
+            return i;
+        }
+        function quickSort(arr,left,right){
+            var index;
+            if(n>1){
+                index=partition(arr,left,right);
+                if(left<index-1){
+                    quickSort(arr,left,index-1);
+                }
+                if(index<right){
+                    quickSort(arr,index,right);
+                }
+            }
+            return arr;
+        }
+        console.log("Before quick sorting: "+arr);
+        quickSort(arr,0,n-1);
+        console.log("After quick sorting: "+arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

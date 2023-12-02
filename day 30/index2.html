@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display() {
+            var x = document.getElementById("input1");
+            console.log("Fetching Data: " + x.value);
+        }
+        function show(x, y) {
+            var a;
+            return function () {
+                clearTimeout(a);
+                a = setTimeout(() => {
+                    x();
+                }, y)
+            }
+
+        }
+        var show1 = show(display, 1000);
+    </script>
+</head>
+
+<body>
+    <input type="text" id="input1" onkeyup="show1()" />
+</body>
+
+</html>

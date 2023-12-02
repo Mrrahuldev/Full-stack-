@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Node{
+            constructor(data){
+                this.data=data;
+                this.next=null;
+            }
+        }
+        class Car{
+            constructor(){
+                this.head=null;
+                this.size=0;
+            }
+            insert(data){
+                var node=new Node(data);
+                var current;
+                if(this.head==null){
+                    this.head=node;
+                }
+                else{
+                    current=this.head;
+                    while(current.next!==null){
+                        current=current.next;
+                    }
+                    current.next=node;
+                }
+                this.size++;
+            }
+            traverse(){
+                var current=this.head; // we will use current pointer
+                console.log(this.head.data); // first inserted value is getting printed in console
+                while(current.next!==null){ // it will iterate through every node in the list until current's next becomes null
+                    current=current.next; // current will point to current's next and it will iterate
+                    console.log(current.data); // rest inserted values are getting printed in console
+                } // once current's next becomes null, it will come out of the loop
+            }
+        }
+        var obj=new Car();
+        obj.insert(54);
+        obj.insert(76);
+        obj.insert("apple");
+        obj.insert("kiwi");
+        obj.traverse();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //difference operation on set
+        class Set{
+            constructor(){
+                this.items={};
+            }
+            has(element){
+                return this.items.hasOwnProperty(element.toString());
+            }
+            add(element){
+                this.items[element]=element;
+            }
+            traverse(){
+                console.log(`Elements are ${Object.values(this.items)}`);
+            }
+            difference(otherset){ // otherset is receiving parameters from set s2
+                if(!(otherset instanceof Set)){
+                    throw new Error("Must be instance of Set");
+                }
+                var differenceSet=new Set(); // creating new set
+                Object.values(this.items).forEach((element) => { // receiving values from set s1
+                    if(!otherset.has(element)){ // if set s1 and set s2 don't have common values
+                        differenceSet.add(element); // inserting uncommon values in newly created set
+                    }
+                });
+                return differenceSet;
+            }
+        }
+        var s1=new Set();
+        var s2=new Set();
+        s1.add(10);
+        s1.add(20);
+        s1.add(50);
+        s2.add(80);
+        s2.add(20);
+        s2.add(10);
+        s1.difference(s2).traverse();
+        s2.difference(s1).traverse();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

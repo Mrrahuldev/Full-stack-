@@ -1,0 +1,50 @@
+@import "reset.scss";
+@mixin mixname{
+    background-color: red;
+    font-size: 20px;
+    width: 300px;
+}
+
+@mixin mixname1{
+    background-color: blue;
+    font-size: 40px;
+    width: 600px;
+}
+
+@mixin mixname2($color1,$font1,$font2) {
+    background-color: $color1;
+    font-size: $font1;
+    width: $font2;
+}
+
+.div1 {
+    @include mixname();
+}
+
+.div2 {
+    @include mixname1();
+}
+
+.div3 {
+    @include mixname();
+}
+
+.div4 {
+    @include mixname();
+}
+
+.div5 {
+    @include mixname1();
+}
+
+.div6 {
+    @include mixname2(green,40px,300px);
+}
+
+.div7 {
+    @include mixname();
+}
+
+.div8 {
+    @include mixname2(red,20px,200px);
+}

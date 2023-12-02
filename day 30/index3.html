@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display() {
+            console.log("hello");
+        }
+        function show(x, y) {
+            var a;
+            return function () {
+                clearTimeout(a);
+                a = setTimeout(() => {
+                    x();
+                }, y)
+            }
+
+        }
+        var show1 = show(display, 1000);
+        window.addEventListener("resize",show1);
+    </script>
+</head>
+
+<body>
+    <button onclick="show1()">Click me</button>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(){
+                this.arr=new Array(10);
+            }
+            show(x){
+                var finalHash=0;
+                for(var i=0; i<x.length; i++){
+                    var y=x.charCodeAt(i);
+                    finalHash+=y;
+                }
+                return finalHash%this.arr.length;
+            }
+        }
+        var obj=new Car();
+        console.log(obj.show("mangoes"));
+        console.log(obj.show("grapefruits"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

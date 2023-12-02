@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(){
+                this.arr=new Array(10);
+            }
+            show(x){ // hash
+                var a=0;
+                for(var i=0; i<x.length; i++){
+                    a+=x.charCodeAt(i);
+                }
+                return a%this.arr.length;
+            }
+            show1(x,y){ // set
+                var a=this.show(x);
+                if(!this.arr[a]){ // to avoid overwrite at the same index number; in if statement !this.arr[a] corresponds to true
+                    this.arr[a]=[];
+                }
+                this.arr[a].push([x,y]);
+            }
+            show2(){ // display
+                for(var b of this.arr){
+                    var c=this.arr.indexOf(b);
+                    console.log(`${c}:${b}`);
+                }
+            }
+        }
+        var obj=new Car();
+        obj.show1("mangoes",40);
+        obj.show1("grapefruits",120);
+        obj.show2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

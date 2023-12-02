@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.div1 {
+  background-color: red;
+  font-size: 20px;
+  width: 300px;
+}
+
+.div2 {
+  background-color: blue;
+  font-size: 40px;
+  width: 600px;
+}
+
+.div3 {
+  background-color: red;
+  font-size: 20px;
+  width: 300px;
+}
+
+.div4 {
+  background-color: red;
+  font-size: 20px;
+  width: 300px;
+}
+
+.div5 {
+  background-color: blue;
+  font-size: 40px;
+  width: 600px;
+}
+
+.div6 {
+  background-color: green;
+  font-size: 40px;
+  width: 300px;
+}
+
+.div7 {
+  background-color: red;
+  font-size: 20px;
+  width: 300px;
+}
+
+.div8 {
+  background-color: red;
+  font-size: 20px;
+  width: 200px;
+}/*# sourceMappingURL=style.css.map */

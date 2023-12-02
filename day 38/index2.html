@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Push
+        class Car{
+            constructor(size){
+                this.size=size;
+                this.arr=[];
+                this.top=0;
+            }
+            show(x){
+                if(this.top >= this.size){
+                    return "Stack Overflow";
+                }
+                (this.arr)[this.top]=x;
+                this.top=this.top+1;
+                return this.arr;
+            }
+        }
+        var obj=new Car(4);
+        for(i=0; i<=5; i++){
+            y=Math.floor((Math.random()*10)+1);
+            console.log(obj.show(y));
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

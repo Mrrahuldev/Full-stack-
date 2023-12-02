@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show() {
+            var x = document.createElement("div");
+            x.textContent="hello";
+            document.body.prepend(x);
+            x.className="div1";
+            document.getElementsByClassName("div1")[0].style.border="1px solid red";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div1">
+        <h1>heading</h1>
+        <p>hello everyone</p>
+    </div>
+    <button onclick="show()">Click me</button>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+.outerbox{
+    height: 605px;
+    width: 900px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.flex1{
+    height: 80px;
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex1item{
+    height: 100%;
+    width: 80px;
+    background-color: red;
+}
+
+.flex2{
+    height: 60px;
+    width: 100%;
+    border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.flex2item1{
+    height: 100%;
+    width: 40px;
+    background-color: aqua;
+}
+
+.flex2item2{
+    height: 50%;
+    width: 80px;
+    background-color: green;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.flex2item3{
+    height: 75%;
+    width: 40px;
+    background-color: yellow;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.flex2item4{
+    height: 90%;
+    width: 10px;
+    background-color: magenta;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.flex2item5{
+    height: 50%;
+    width: 80px;
+    background-color: orange;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    margin-right: 0px;
+}
+
+.flex3box{
+    height: 430px;
+    width: 100%;
+    border: 1px solid red;
+}
+
+.flex3{
+    height: 425px;
+    width: 80%;
+    border: 1px solid blue;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+
+.flex3item1{
+    height: 45%;
+    width: 30%;
+    background-color: brown;
+}
+
+.flex3item2{
+    height: 45%;
+    width: 30%;
+    background-color: yellow;
+}
+
+.flex3item3{
+    height: 45%;
+    width: 30%;
+    background-color: blue;
+}
+
+.flex3item4{
+    height: 47%;
+    width: 45%;
+    background-color: green;
+}
+
+.flex3item5{
+    height: 47%;
+    width: 45%;
+    background-color: purple;
+}

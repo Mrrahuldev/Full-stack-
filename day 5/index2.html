@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="show" width="1000px" height="1000px"></canvas>
+    <script>
+        var x=document.getElementById("show");
+        var y=x.getContext("2d");
+        y.strokeStyle="blue";
+        y.beginPath();
+        y.moveTo(0,0);
+        y.lineTo(300,0);
+        y.lineTo(300,300);
+        y.closePath();
+        y.stroke();
+    </script>
+</body>
+</html>

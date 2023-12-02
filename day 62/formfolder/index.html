@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Document</title>
+   <style>
+      fieldset{
+         width: 200px;
+         margin: 80px auto;
+         transition: 1s;
+      }
+      fieldset:hover{
+         box-shadow: 0px 0px 10px 0px gray;
+      }
+   </style>
+</head>
+
+<body>
+   <fieldset>
+      <legend>Registration Form</legend>
+      <form action="/registration" method="post">
+         <input type="text" name="name" placeholder="Enter your name" required /><br/><br/>
+         <input type="number" name="mobile" placeholder="Enter your mobile" required /><br/><br/>
+         <input type="date" name="date" required/><br/><br/>
+         <input type="email" name="email" placeholder="Enter your email" required /><br/><br/>
+         <input type="password" name="password" placeholder="Enter your password" required /><br/><br/>
+         <input type="submit"/>
+      </form>
+   </fieldset>
+   
+</body>
+
+</html>

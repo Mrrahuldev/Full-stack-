@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Tower of Hanoi
+        function show(n,s,d,a){ //shift n disks from s to d with the help of a
+            if(n==0){
+                return;
+            }
+            show(n-1,s,a,d); //shift n-1 disks from s to a with the help of d
+            console.log(`move disk ${n} from ${s} to ${d}`);
+            show(n-1,a,d,s); //shift n-1 disks from a to d with the help of s
+        }
+        show(3,"A","C","B");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

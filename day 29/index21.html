@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: red;
+            display: flex;
+        }
+        #div2{
+            border: 1px solid blue;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var arr=[
+            {
+                name: "Abc",
+                roll: 1,
+            },
+            {
+                name: "Xyz",
+                roll: 2
+            }
+        ]
+        var div1=document.getElementById("div1");
+        arr.map((x) => {
+            var div2=document.createElement("div");
+            div2.id="div2";
+            var h1=document.createElement("h1");
+            h1.innerHTML="Name: "+x.name;
+            var h2=document.createElement("h2");
+            h2.innerHTML="Roll: "+x.roll;
+            var button=document.createElement("button");
+            button.className="button";
+            button.innerHTML="Delete";
+            div1.appendChild(div2);
+            div2.appendChild(h1);
+            div2.appendChild(h2);
+            div2.appendChild(button);
+            div1.addEventListener("click",function(x){
+                if(x.target.className=="button"){
+                    x.target.parentElement.remove();
+                }
+            })
+        })
+    </script>
+</body>
+</html>

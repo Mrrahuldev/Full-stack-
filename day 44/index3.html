@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Removing node from Directed Graph
+        class Graph{
+            constructor(){
+                this.adjacencyList=new Map();
+            }
+            addNode(node){
+                this.adjacencyList.set(node,[]);
+            }
+            addEdge(origin,destination){
+                this.adjacencyList.get(origin).push(destination);
+            }
+            removeNode(x){
+                this.adjacencyList.delete(x); // for deleting node
+                for(let ele of this.adjacencyList){ // iterating through every element of map
+                    ele[1].map((item,index) => { // applying map on value of key-value pair
+                        if(item==x){
+                            ele[1].splice(index,1); // for removing one node value from rest element's value
+                        }
+                    });
+                }
+            }
+        }
+        const G1=new Graph();
+        G1.addNode("A");
+        G1.addNode("B");
+        G1.addNode("C");
+        G1.addNode("D");
+        G1.addEdge("A","B");
+        G1.addEdge("A","C");
+        G1.addEdge("B","D");
+        G1.addEdge("C","D");
+        G1.removeNode("D");
+        console.log(G1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Hierarchical Inheritance
+        class Parent{
+            show(){
+                console.log("this is parent");
+            }
+        }
+        class Child1 extends Parent{
+            show1(){
+                console.log("this is child1");
+            }
+        }
+        class Child2 extends Parent{
+            show2(){
+                console.log("this is child2");
+            }
+        }
+        var obj=new Parent();
+        obj.show();
+
+        var obj1=new Child1();
+        obj1.show();
+        obj1.show1();
+
+        var obj2=new Child2();
+        obj2.show();
+        obj2.show2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

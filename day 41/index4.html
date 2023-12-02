@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> //Search Operation in Double Linked List
+        class Node{
+            constructor(data){
+                this.prev=null;
+                this.data=data;
+                this.next=null;
+            }
+        }
+        class DoubleLinkedList{
+            constructor(){
+                this.head=null;
+                this.size=null;
+            }
+            insert(data){
+                var node=new Node(data);
+                if(this.head==null){
+                    this.head=node;
+                }
+                else{
+                    var current=this.head;
+                    while(current.next!==null){
+                        current=current.next;
+                    }
+                    current.next=node;
+                    node.prev=current;
+                }
+                this.size++;
+            }
+            search(x){
+                var count=1;
+                var current=this.head; // we will use current pointer
+                while(current.next!==null){ // it will iterate through every node in the list until current's next becomes null
+                    if(current.data===x){ // if current's data == what we are searching
+                        console.log(`${x} found at position: ${count}`);
+                    }
+                    current=current.next; // current will point to current's next and it will iterate
+                    count++;
+                } // once current's next becomes null, it will come out of the loop
+                if(current.data==x){ // this statement is again used for last item's search
+                    console.log(`${current.data} found at position--> ${count}`);
+                }
+            }
+        }
+        const fruits=new DoubleLinkedList();
+        fruits.insert("Grapes");
+        fruits.insert("orange");
+        fruits.insert("kiwi");
+        fruits.insert("kiwi");
+        fruits.insert("pear");
+        fruits.search("kiwi");
+        fruits.search("pear");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

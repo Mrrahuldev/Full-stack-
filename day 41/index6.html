@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script> // Circular Doubly Linked List
+        //Represents a standalone node
+        class Node {
+            constructor(value) {
+                this.value= value;
+                this.previous= null;
+                this.next= null;
+            }
+        }
+
+        class DoublyLinkedList {
+            constructor(value) {
+                this.head = {
+                    value: value,
+                    previous: null,
+                    next: null,
+                };
+                this.length= 1;
+                this.tail= this.head;
+            }
+
+            printList() {
+                let array= [];
+                let current= this.head;
+                while(current !== null) {
+                    array.push(current.value);
+                    current= current.next;
+                }
+                console.log(array.join('<-->'));
+                return this;
+            }
+
+            append(value) {
+                let newNode= new Node(value);
+
+                this.tail.next= newNode;
+                newNode.previous= this.tail;
+                this.tail= newNode;
+
+                this.length++;
+                this.printList();
+            }
+
+            prepend(value) {
+                let newNode= new Node(value);
+                
+                newNode.next= this.head;
+                this.head.previous= newNode;
+                this.head= newNode;
+
+                this.length++;
+                this.printList();
+            }
+
+            insert(index, value) {
+                if(index == 0) {
+                    this.prepend(value);
+                    return this;
+                }
+
+                if(index== this.length) {
+                    this.append(value);
+                    return this;
+                }
+
+                let newNode= new Node(value);
+                let previous= this.head;
+
+                for(let k=0; k<index-1; k++) {
+                    previous= previous.next;
+                }
+
+                let next= previous.next;
+
+                newNode.next= next;
+                previous.next= newNode;
+                newNode.previous= previous;
+                next.previous= newNode;
+
+                this.length++;
+                this.printList();
+            }
+        }
+
+        let myDoublyList= new DoublyLinkedList(10);
+
+        myDoublyList.append(5);
+        myDoublyList.append(16);
+
+        myDoublyList.prepend(1);
+
+        myDoublyList.insert(2, 99);
+        myDoublyList.insert(5, 80);
+        myDoublyList.insert(0, 80);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

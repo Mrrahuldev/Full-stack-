@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a=new Set();
+        a.add(10);
+        a.add(10);
+        a.add(20);
+        a.add(20);
+        a.add(30);
+        a.add("hello");
+        console.log(a);
+        a.delete(10);
+        console.log(a);
+        console.log(a.has(10));
+        console.log(a.has(20));
+        console.log(a.has(60));
+
+        var b=new Map();
+        console.log(b)
+        b.set("hello",1);
+        b.set("everyone",2);
+        console.log(b.get("hello"));
+        console.log(b.get("everyone"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

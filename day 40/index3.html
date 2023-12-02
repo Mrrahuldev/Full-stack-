@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Car{
+            constructor(){
+                this.arr=new Array(10);
+            }
+            show(x){ // hash
+                var a=0;
+                for(var i=0; i<x.length; i++){
+                    a+=x.charCodeAt(i);
+                }
+                return a%this.arr.length;
+            }
+            show1(x,y){ // set
+                var a=this.show(x);
+                if(!this.arr[a]){
+                    this.arr[a]=[];
+                }
+                this.arr[a].push([x,y]);
+            }
+            show2(x){ // get
+                var b=this.show(x);
+                var c=this.arr[b];
+                if(!c){ // !c corresponds to false
+                    return undefined;
+                }
+                else{
+                    for(var z of c){
+                        if(z[0]==x){ // if z[0] which is key == x, which we are passing in parameter
+                            console.log(z[1]); // z[1] is value
+                        }
+                    }
+                }
+            }
+        }
+        var obj=new Car();
+        obj.show1("mangoes",40);
+        obj.show1("grapesfruits",120);
+        obj.show2("mangoes");
+        obj.show2("grapesfruits");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

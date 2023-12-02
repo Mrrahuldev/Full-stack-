@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function* show(a){
+            yield a+10;
+            yield a+20;
+        }
+
+        var x=show(60);
+
+        console.log(x.next().value);
+        console.log(x.next().value);
+        console.log(x.next().value);
+
+        var y=show(75);
+        console.log(y.next().value);
+        console.log(y.next().value);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
